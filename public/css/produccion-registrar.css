@@ -1,0 +1,143 @@
+/* resources/css/app.css */
+:root {
+    --primary-color: #1B5E20;
+    --primary-dark: #0e3d12;
+    --secondary-color: #0D47A1;
+    --secondary-dark: #08306b;
+    --gray-color: #6c757d;
+    --gray-dark: #5a6268;
+    --white: #fff;
+    --black: #1e2a3a;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.15);
+    --shadow-lg: 0 20px 35px rgba(0,0,0,0.2);
+    --border-radius-card: 28px;
+    --border-radius-box: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/fondo.jpg") center/cover fixed no-repeat;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Formularios generales */
+.form-box {
+    background: #ffffffee;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    border-left: 6px solid var(--primary-color);
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 28px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27,94,32,0.1);
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-guardar {
+    background: var(--secondary-color);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-guardar:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-volver {
+    background: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-volver:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+input[readonly] {
+    background: #f1f8e9;
+}

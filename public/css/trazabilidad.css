@@ -1,0 +1,137 @@
+/* resources/css/trazabilidad.css */
+.container-trazabilidad {
+    max-width: 1400px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    text-align: center;
+    color: #1B5E20;
+    margin-bottom: 20px;
+}
+
+.filtros {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filtros .grupo {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filtros label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1B5E20;
+}
+
+.filtros input, .filtros select {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+.filtros .btn-filtrar {
+    background: #0D47A1;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filtros .btn-filtrar:hover {
+    background: #08306b;
+}
+
+.filtros .btn-limpiar {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    background: #1B5E20;
+    color: white;
+    padding: 12px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+tr:hover td {
+    background: #f5f5f5;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-ingreso { background: #0D47A1; color: white; }
+.badge-proceso { background: #F9A825; color: #333; }
+.badge-produccion { background: #2E7D32; color: white; }
+.badge-despacho { background: #C62828; color: white; }
+
+.paginacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-exportar {
+    background: #1B5E20;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.btn-volver {
+    background: #0d47a1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}

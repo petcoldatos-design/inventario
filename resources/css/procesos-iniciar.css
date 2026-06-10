@@ -1,0 +1,239 @@
+/* resources/css/procesos-iniciar.css */
+:root {
+    --color-primary: #1B5E20;
+    --color-primary-dark: #0e3d12;
+    --color-secondary: #0D47A1;
+    --color-secondary-dark: #08306b;
+    --color-gray: #6c757d;
+    --color-gray-dark: #5a6268;
+    --color-white: #fff;
+    --color-black: #333;
+    --border-radius-card: 28px;
+    --border-radius-box: 20px;
+    --shadow-md: 0 20px 35px rgba(0,0,0,0.2);
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/fondo.jpg") center/cover fixed no-repeat;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 650px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    border-left: 6px solid var(--color-primary);
+}
+
+.header {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.content {
+    padding: 30px;
+}
+
+.search-box {
+    background: #f9f9f9;
+    border-radius: var(--border-radius-box);
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+}
+
+.btn {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.2s;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: var(--color-primary);
+}
+
+.btn-success:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: var(--color-gray);
+}
+
+.btn-secondary:hover {
+    background: var(--color-gray-dark);
+}
+
+.card-info {
+    background: #e8f5e9;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--color-primary);
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.info-label {
+    font-weight: bold;
+    width: 140px;
+    color: var(--color-primary);
+}
+
+.info-value {
+    flex: 1;
+    color: var(--color-black);
+    word-break: break-word;
+}
+
+.alert {
+    padding: 12px 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge-inv {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.badge-proc {
+    background: #F9A825;
+    color: #333;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Corrección: botones con ancho consistente */
+.button-group .btn,
+.button-group .btn-secondary {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background: #ddd;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+@media (max-width: 550px) {
+    .content {
+        padding: 20px;
+    }
+    .info-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .button-group .btn {
+        width: 100%;
+    }
+}
