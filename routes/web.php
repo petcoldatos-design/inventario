@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/procesos/dashboard', [DashboardController::class, 'procesosDashboard'])->name('procesos.dashboard')->middleware('role:procesos');
     Route::get('/despachos/dashboard', [DashboardController::class, 'despachosDashboard'])->name('despachos.dashboard')->middleware('role:despachos');
 
+
     // ============================================
     // MÓDULO INVENTARIO (registro y listado para admin e inventario)
     // ============================================
@@ -97,14 +98,25 @@ Route::middleware(['auth'])->group(function () {
         ]);
     });
 
-    Route::resource('usuarios', UsuarioController::class)->except(['show']);
-    
-    Route::get('usuarios/{usuario}/toggle-activo', [UsuarioController::class, 'toggleActivo'])->name('admin.usuarios.toggle.activo');
-    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('profile.index');
-    Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/perfil', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-    Route::get('/autoedit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.autoedit');
-    Route::put('/autoedit', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/autoedit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.autoedit'); ///
+        Route::put('/autoedit', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update'); //
+    });
+
+    Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
+        Route::resource('usuarios', UsuarioController::class)->except(['show'])->names([
+            'index'   => 'admin.usuarios.index',
+            'create'  => 'admin.usuarios.create',
+            'store'   => 'admin.usuarios.store',
+            'edit'    => 'admin.usuarios.edit',
+            'update'  => 'admin.usuarios.update',
+            'destroy' => 'admin.usuarios.destroy',
+        ]);
+        Route::get('usuarios/{usuario}/toggle-activo', [UsuarioController::class, 'toggleActivo'])->name('admin.usuarios.toggle.activo');
+    });
+
+
 
 
     // ============================================

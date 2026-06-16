@@ -13,7 +13,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::orderBy('name')->paginate(15);
-        return view('profile.index', compact('usuarios'));
+        return view('admin.usuarios.index', compact('usuarios'));
     }
 
     public function create()

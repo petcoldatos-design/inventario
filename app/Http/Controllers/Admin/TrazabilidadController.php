@@ -52,7 +52,7 @@ class TrazabilidadController extends Controller
             ->orderBy('fecha_evento', 'asc')
             ->get();
 
-        $filename = "trazabilidad_{$year}_{$month}.csv";
+        $filename = "trazabilidad_{$year}_{$month}.xls";
 
         $headers = [
             'Content-Type'        => 'text/csv',

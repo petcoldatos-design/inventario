@@ -1,9 +1,10 @@
+/* resources/css/admin-dashboard.css */
 :root {
     --color-primary: rgba(0,0,0,0.2);
-    --color-card: #e8f5e978;
-    --color-primary-dark: #2c9b35;
-    --color-secondary: #136d09;
-    --color-accent: #0777ff;
+    --color-card: #e8f5e930;
+    --color-primary-dark: #0e3d12;
+    --color-secondary: #1B5E20;
+    --color-accent: #ffc107;
     --color-white: #fff;
     --color-black: #1e2a3a;
     --color-gray: #555;
@@ -40,7 +41,7 @@ body {
 .sidebar {
     min-width: 260px;
     max-width: 260px;
-    background: rgb(20, 45, 25);
+    background: rgba(20, 45, 25, 0.21);
     backdrop-filter: blur(6px);
     color: var(--color-white);
     transition: all 0.3s;
@@ -123,7 +124,7 @@ body {
 .navbar-brand span {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-primary-dark);
+    color: var(--color-white);
     letter-spacing: 1px;
 }
 
@@ -161,26 +162,13 @@ body {
 
 /* ========== TARJETAS DE ESTADÍSTICAS ========== */
 .card-stats {
-
-    backdrop-filter: blur(10px);
+    background: var(--color-card);
+    backdrop-filter: blur(8px);
     border-radius: var(--border-radius-card);
     border-top: 5px solid;
-    box-shadow: 0 0 8px var(--shadow-md);
+    box-shadow: var(--shadow-md);
     transition: transform var(--transition);
     height: 100%;
-    border: 2px solid var(--color-primary-dark);
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 128, 0, 0.2);
-  }
-  70% {
-    box-shadow: 0 0 0 18px rgba(0, 128, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 128, 0, 0);
-  }
 }
 .card-stats:hover {
     transform: translateY(-5px);
@@ -191,20 +179,21 @@ body {
 }
 .card-stats i {
     font-size: 48px;
-    color: var(--color-white);
+    color: var(--color-secondary);
 }
 .card-stats h3 {
     font-size: 32px;
     font-weight: bold;
     margin: 15px 0 5px;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 .card-stats p {
     font-size: 16px;
-    color: var(--color-white);
+    color: var(--color-gray);
     margin: 0;
 }
 /* Colores de borde para cada tarjeta */
+.card-stats:nth-child(1) { border-top-color: #4CAF50; }
 .card-stats:nth-child(2) { border-top-color: #FF9800; }
 .card-stats:nth-child(3) { border-top-color: #2196F3; }
 .card-stats:nth-child(4) { border-top-color: #9C27B0; }
@@ -217,42 +206,48 @@ body {
     margin: 40px 0;
 }
 .menu-card {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     border-radius: var(--border-radius-menu);
     padding: 25px;
     text-align: center;
     text-decoration: none;
     transition: var(--transition);
-    border: 2px solid var(--color-primary-dark);
 }
 .menu-card:hover {
+    background: var(--color-white);
     transform: scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 .menu-card i {
     font-size: 48px;
     margin-bottom: 15px;
-    color: var(--color-white);
 }
 .menu-card h4 {
     font-size: 20px;
     font-weight: bold;
-    color: var(--color-white);
 }
-.menu-card p {
-    font-size: 14px;
-    color: var(--color-white);
-    margin: 0;
-}
+/* Colores diferenciados para cada módulo */
+.menu-card:nth-child(1) { background: #e8f5e934; }
+.menu-card:nth-child(2) { background: #fff3e031; }
+.menu-card:nth-child(3) { background: hsla(205, 87%, 94%, 0.102); }
+.menu-card:nth-child(4) { background: #f3e5f538; }
+.menu-card:nth-child(5) { background: #e0f7fa21; }
+.menu-card:nth-child(1) i { color: #2E7D32; }
+.menu-card:nth-child(2) i { color: #E65100; }
+.menu-card:nth-child(3) i { color: #0D47A1; }
+.menu-card:nth-child(4) i { color: #6A1B9A; }
+.menu-card:nth-child(5) i { color: #006064; }
+.menu-card:h4(1) { color: #2E7D32; }
+.menu-card:h4(2) { color: #E65100; }
+.menu-card:h4(3) { color: #0D47A1; }
+.menu-card:h4(4) { color: #6A1B9A; }
+.menu-card:h4(5) { color: #006064; }
 
 /* ========== TABLA DE TRAZABILIDAD ========== */
 .table-movimientos {
-    backdrop-filter: blur(10px);
-    background: #ffffff00;
+    background: var(--color-card-bg);
     border-radius: var(--border-radius-card);
     overflow: hidden;
-    border: 2px solid var(--color-primary-dark);
-    box-shadow: var(--shadow-md);
 }
 .table-movimientos th {
     background: var(--color-secondary);
@@ -264,19 +259,10 @@ body {
 .table-movimientos tbody tr:hover {
     background-color: rgba(27,94,32,0.05);
 }
-.table>:not(caption)>*>* {
-    backdrop-filter: blur(10px);
-    background: #ffffff00;
-    padding: 12px 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    border: 1px solid var(--color-primary-dark);
-    color: var(--color-white);
-}
 
 /* ========== TÍTULOS DE SECCIÓN ========== */
 .titulo-seccion {
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--color-primary-dark);
+    background: linear-gradient(90deg, #1B5E20, #4CAF50);
     display: inline-block;
     padding: 8px 24px;
     border-radius: 40px;
