@@ -67,7 +67,7 @@
                 </div>
                 <div>
                     <label>Lote (automático)</label>
-                    <input type="text" id="lote_preview" readonly style="background:#f1f8e9; font-weight:bold;">
+                    <input type="text" id="lote_preview" readonly font-weight:bold;">
                 </div>
             </div>
 
@@ -79,15 +79,17 @@
 
             <button class="btn-guardar">Guardar Registro</button>
 
-            @if(auth()->user()->rol == 'admin')
-                <button type="button" class="btn-volver" onclick="location.href='{{ route('admin.dashboard') }}'">Volver al Dashboard</button>
-            @endif
+  
         </form>
 
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button class="btn-volver" type="submit">Cerrar sesión</button>
-            </form>
+            <div style="margin-top: 20px;">
+            @if(auth()->user()->rol == 'admin')
+                <a href="{{ route('admin.dashboard') }}" class="btn-volver">Volver al inicio</a>
+            @elseif(auth()->user()->rol == 'produccion')
+                <a href="{{ route('logout') }}" class="btn-volver">Cerrar sesión</a>
+            @endif
+            </div>
+    </div>
     </div>
 </div>
 

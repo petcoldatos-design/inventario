@@ -6,7 +6,7 @@
     <title>Iniciar Proceso | PlastyPetco</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}">
     <!-- CSS global (debe contener todos los estilos comunes y específicos) -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/procesos-iniciar.css') }}">
 </head>
 <body>
 <div class="container">
@@ -36,11 +36,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
+                    @if(auth()->user()->rol == 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary"> Volver al inicio</a>
+                    @endif
             </div>
              
-            @if(auth()->user()->rol == 'admin')
-                    <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">🏠 Dashboard Admin</a>
-                @endif
+
 
         @elseif($resultado)
             <div class="card-info">
@@ -110,11 +111,11 @@
     @if(!empty($codigo))
         <div class="button-group bottom-buttons">
             @if(auth()->user()->rol == 'admin')
-                <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">🏠 Volver al Dashboard Admin</a>
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Volver al inicio</a>
             @elseif(auth()->user()->rol == 'procesos')
                 <form method="POST" action="{{ route('logout') }}" style="display: inline; width: 100%;">
                     @csrf
-                    <button type="submit" class="btn btn-secondary" style="width: 100%;">🚪 Cerrar sesión y volver al login</button>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%;"> Cerrar sesión y volver al login</button>
                 </form>
             @endif
         </div>

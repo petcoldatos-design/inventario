@@ -11,12 +11,13 @@
             padding: 30px;
         }
         .form-box{
-            background: #ffffffef;
+            background: #ffffff2b;
             width: 540px;
             margin: auto;
             padding: 32px;
             border-radius: 18px;
             box-shadow: 0 6px 18px rgba(0,0,0,.18);
+            border: 1px solid #1B5E20;
         }
         h2{
             text-align: center;

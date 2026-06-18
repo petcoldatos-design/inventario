@@ -22,7 +22,7 @@
 }
 
 body {
-    background: url("../images/fondo.jpg") center/cover fixed no-repeat;
+    background: url("../images/fon2.png") center/cover fixed no-repeat;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     padding: 40px 20px;
@@ -32,30 +32,32 @@ body {
 
 /* Formularios generales */
 .form-box {
-    background: #ffffffee;
+    backdrop-filter: blur(10px);
+    background: #ffffff00;
     max-width: 600px;
     width: 100%;
     margin: auto;
     padding: 32px;
     border-radius: 20px;
     box-shadow: 0 10px 22px rgba(0,0,0,.18);
-    border-left: 6px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--white);
     margin-bottom: 28px;
 }
 
 label {
     font-weight: 600;
-    color: var(--primary-color);
+    color: #ffff;
     margin-bottom: 6px;
     display: block;
 }
 
 input, select, textarea {
+    background: #f9f9f94c;
     width: 100%;
     padding: 12px;
     border-radius: 12px;
@@ -102,7 +104,7 @@ textarea {
 
 .btn-volver {
     background: var(--primary-color);
-    color: white;
+    color: rgb(255, 255, 255);
     width: 100%;
     padding: 14px;
     border: none;
@@ -115,6 +117,10 @@ textarea {
     display: inline-block;
     text-decoration: none;
     box-sizing: border-box;
+}
+
+#lote_preview{
+   background: #f9f9f94c;
 }
 
 .btn-volver:hover {
@@ -139,5 +145,5 @@ textarea {
 }
 
 input[readonly] {
-    background: #f1f8e9;
+    background: #f1f8e90c;
 }

@@ -7,7 +7,9 @@
     <link href="{{ asset('css/inventario-registrar.css') }}" rel="stylesheet">
 </head>
 <body>
+    
 <div class="form-box">
+    <h1><img src="{{ asset('images/plas.jpg') }}" alt="Logo" style="height: 40px;"> PlastyPetco</h1>
     <h2>Registrar Nuevo Residuo</h2>
 
     @if(session('success'))
@@ -26,7 +28,7 @@
 
     <form method="POST" action="{{ route('inventario.store') }}" id="formInventario">
         @csrf
-
+        <div style="display: flex; gap: 20px;">
         <!-- Fecha -->
         <div class="form-group">
             <label>Fecha</label>
@@ -36,9 +38,10 @@
         <!-- Hora -->
         <div class="form-group">
             <label>Hora</label>
-            <input type="time" name="hora" id="hora" value="{{ old('hora') }}" required>
+            <input class="form-control" type="time" name="hora" id="hora" value="{{ old('hora') }}" required>
         </div>
 
+        </div>
         <!-- Selector de proveedores -->
         <div class="form-group">
             <label>Proveedor</label>
@@ -234,7 +237,7 @@
         <!-- Código de Paca (preview) -->
         <div class="form-group">
             <label>Código De Paca (Automático)</label>
-            <input type="text" id="codigoPreview" readonly style="background:#f1f8e9; font-weight:bold; color:#1B5E20;">
+            <input type="text" id="codigoPreview" readonly">
         </div>
 
         <div class="form-actions">
@@ -243,10 +246,10 @@
     </form>
 
 
-    <!-- Botón volver fuera del formulario -->
+
     <div style="margin-top: 20px;">
         @if(auth()->user()->rol == 'admin')
-            <a href="{{ route('admin.dashboard') }}" class="btn-volver">🏠 Volver al Dashboard Admin</a>
+            <a href="{{ route('admin.dashboard') }}" class="btn-volver">Volver al inicio</a>
         @elseif(auth()->user()->rol == 'inventario')
             <a href="{{ route('inventario.dashboard') }}" class="btn-volver">Volver</a>
         @endif

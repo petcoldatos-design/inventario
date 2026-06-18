@@ -2,7 +2,7 @@
 :root {
     --color-primary: #1B5E20;
     --color-primary-dark: #0e3d12;
-    --color-secondary: #0D47A1;
+    --color-secondary: #0d48a190;
     --color-secondary-dark: #08306b;
     --color-gray: #6c757d;
     --color-gray-dark: #5a6268;
@@ -21,7 +21,7 @@
 }
 
 body {
-    background: url("../images/fondo.jpg") center/cover fixed no-repeat;
+    background: url("../images/fon2.png") center/cover fixed no-repeat;
     font-family: 'Segoe UI', Arial, sans-serif;
     padding: 40px 20px;
     display: flex;
@@ -30,18 +30,20 @@ body {
 }
 
 .container {
-    max-width: 650px;
+    backdrop-filter: blur(10px);
+    max-width: 710px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0);
     border-radius: var(--border-radius-card);
     box-shadow: var(--shadow-md);
     overflow: hidden;
-    backdrop-filter: blur(2px);
-    border-left: 6px solid var(--color-primary);
+    border:#28a745 1px solid;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
-    background: var(--color-primary);
+    background:  rgba(20, 45, 25, 0.682);
     color: var(--color-white);
     padding: 20px 30px;
     text-align: center;
@@ -57,11 +59,14 @@ body {
 }
 
 .search-box {
-    background: #f9f9f9;
+    backdrop-filter: blur(10px);
+    background: #ffffff0f;
     border-radius: var(--border-radius-box);
     padding: 20px;
     margin-bottom: 25px;
     box-shadow: var(--shadow-sm);
+    border:#28a745 1px solid;
+    margin-bottom: 30px;
 }
 
 .form-group {
@@ -71,16 +76,17 @@ body {
 label {
     display: block;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: 8px;
     font-size: 14px;
 }
 
 input, select {
+    background: #f9f9f929;
     width: 100%;
     padding: 12px 15px;
     border-radius: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #26a001e7;
     font-size: 15px;
     transition: 0.2s;
 }
@@ -105,6 +111,7 @@ input:focus, select:focus {
     display: inline-block;
     text-align: center;
     text-decoration: none;
+    margin-bottom: 23px;
 }
 
 .btn:hover {
@@ -121,7 +128,7 @@ input:focus, select:focus {
 }
 
 .btn-secondary {
-    background: var(--color-gray);
+    background: var(--color-primary-dark);
 }
 
 .btn-secondary:hover {
