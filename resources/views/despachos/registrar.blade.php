@@ -3,108 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Despacho Producto Terminado | PlastyPetco</title>
-    <link rel="icon" href="{{ asset('images/plas.jpg') }}">
-    <style>
-        body{
-            background: url("{{ asset('images/fondo.jpg') }}") center/cover fixed no-repeat;
-            font-family: Arial, sans-serif;
-            padding: 30px;
-        }
-        .form-box{
-            background: #ffffff2b;
-            width: 540px;
-            margin: auto;
-            padding: 32px;
-            border-radius: 18px;
-            box-shadow: 0 6px 18px rgba(0,0,0,.18);
-            border: 1px solid #1B5E20;
-        }
-        h2{
-            text-align: center;
-            color: #1B5E20;
-            margin-bottom: 26px;
-        }
-        label{
-            display: block;
-            font-weight: bold;
-            color: #1B5E20;
-            margin-bottom: 6px;
-        }
-        input, textarea{
-            width: 100%;
-            height: 46px;
-            padding: 10px 14px;
-            border-radius: 12px;
-            border: 1px solid #999;
-            font-size: 15px;
-            margin-bottom: 14px;
-            box-sizing: border-box;
-        }
-        textarea{
-            height: 90px;
-            resize: none;
-        }
-        input[readonly]{
-            background: #f1f8e9;
-        }
-        .grid-2{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        button{
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .btn-guardar{
-            background: #0D47A1;
-            color: white;
-        }
-        .btn-volver{
-            background: #1B5E20;
-            color: white;
-            margin-top: 10px;
-        }
-        .btn-buscar{
-            background: #0D47A1;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 6px;
-        }
-        .buscar-form{
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .buscar-input{
-            width: 200px;
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #999;
-        }
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="icon" href="{{ asset('images/plas.jpg') }}" stylesheet:>
+    <link rel="stylesheet" href="{{ asset('css/despachos-registrar.css') }}"   >
 </head>
 <body>
 <div class="form-box">
+    <h1><img src="{{ asset('images/plas.jpg') }}" alt="Logo" style="height: 40px;"> PlastyPetco</h1>
     <h2>Despacho Producto Terminado</h2>
 
     @if(session('success'))
@@ -171,7 +75,7 @@
         @endif
 
         @if(auth()->user()->rol == 'admin')
-            <button type="button" class="btn-volver" onclick="location.href='{{ route('admin.dashboard') }}'">Dashboard Admin</button>
+            <button type="button" class="btn-volver" onclick="location.href='{{ route('admin.dashboard') }}'">Volver al inicio</button>
         @endif
     </form>
 </div>

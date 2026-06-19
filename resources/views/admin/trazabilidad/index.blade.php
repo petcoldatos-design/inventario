@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trazabilidad | PlastyPetco</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}">
-    <!-- CSS global -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <!-- CSS específico de trazabilidad -->
     <link rel="stylesheet" href="{{ asset('css/trazabilidad.css') }}">
 </head>
 <body>
 <div class="container-trazabilidad">
-    <h1 class="titulo">📋 Trazabilidad de Material (NTC 6632)</h1>
+    <h1 class="titulo">Trazabilidad de Material (NTC 6632)</h1>
 
     <!-- Botón exportar (abre modal) -->
     <div style="text-align: right; margin-bottom: 15px;">
