@@ -15,7 +15,7 @@
     <!-- SIDEBAR IZQUIERDO -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <span><img src="{{ asset('images/plas.jpg') }}" alt="Logo" style="height: 40px;"> PlastyPetco</span>
+            <span><img src="{{ asset('images/plas.jpg') }}" alt="Logo" style="height: 50px;"> PlastyPetco</span>
         </div>
         <ul class="nav flex-column">
             <!-- Acciones principales -->
@@ -154,11 +154,6 @@
                     <h4>Gestionar Despachos</h4>
                     <p>Salidas a clientes</p>
                 </a>
-                <a href="{{ route('admin.trazabilidad.index') }}" class="menu-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Trazabilidad NTC 6632</h4>
-                    <p>Historial completo y exportación</p>
-                </a>
             </div>
 
             <!-- Últimos movimientos de trazabilidad -->
@@ -192,10 +187,10 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Opcional: si quieres que el sidebar sea colapsable en móvil, añade este JS
-    // document.getElementById('sidebarCollapse').addEventListener('click', function() {
-    //     document.querySelector('.sidebar').classList.toggle('active');
-    // });
+
+    document.getElementById('sidebarCollapse').addEventListener('click', function() {
+   document.querySelector('.sidebar').classList.toggle('active');
+   document.querySelector('.main-content').classList.toggle('active');});
 </script>
 </body>
 </html>

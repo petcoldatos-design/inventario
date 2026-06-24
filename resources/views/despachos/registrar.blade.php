@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Despacho Producto Terminado | PlastyPetco</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}" stylesheet:>
-    <link rel="stylesheet" href="{{ asset('css/despachos-registrar.css') }}"   >
+    <link rel="stylesheet" href="{{ asset('css/despachos-registrar.css') }}">
 </head>
 <body>
 <div class="form-box">
@@ -63,7 +63,7 @@
         <input type="text" name="despachado_por" value="{{ old('despachado_por', auth()->user()->usuario) }}">
 
         <label>Conductor</label>
-        <input type="text" name="conductor" value="{{ old('conductor') }}">
+        <input type="text" name="conductor" value=x"{{ old('conductor') }}">
 
         <label>Observaciones</label>
         <textarea name="observaciones">{{ old('observaciones') }}</textarea>

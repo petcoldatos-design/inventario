@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Inventario | PlastyPetco</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/lista-inventario.css') }}">
     <style>
-        /* Estilos adicionales específicos para la tabla */
+        body {
+            background: url("../images/fon2.png") center/cover fixed no-repeat;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0);
+            border-radius: var(--border-radius-card);
+            box-shadow: #000000 0px 0px 20px 0px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(2, 86, 10, 0.92);
+        }
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #1B5E20;
+            background: rgba(255, 255, 255, 0.8);
         }
         table {
             width: 100%;
@@ -74,12 +96,12 @@
     </style>
 </head>
 <body>
-<div class="container" style="max-width: 1400px; margin: 30px auto; background: rgba(255,255,255,0.95); border-radius: 28px; padding: 30px;">
+<div class="container" style="max-width: 1400px; margin: 30px auto; border-radius: 28px; padding: 30px;">
     <h2>📦 Listado de Inventario</h2>
-    <p>Total de registros: {{ $inventarios->count() }}</p>
+
 
     <div class="filtro">
-        <input type="text" id="buscar" placeholder="🔍 Buscar por proveedor, código, material..." onkeyup="filtrarTabla()">
+        <input type="text" id="buscar" placeholder="🔍 Buscar" onkeyup="filtrarTabla()">
     </div>
 
     <div class="table-container">
@@ -121,7 +143,7 @@
     </div>
 
     <div>
-
+    <p>Total de registros: {{ $inventarios->count() }}</p>
     @if(auth()->user()->rol == 'admin')
         <a href="{{ route('admin.dashboard') }}" class="btn-volver">← Volver al Dashboard</a>
         @elseif(auth()->user()->rol == 'inventario')

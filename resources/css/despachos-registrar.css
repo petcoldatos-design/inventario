@@ -2,16 +2,18 @@ body{
     background: url("../images/fon2.png");
     font-family: Arial, sans-serif;
     padding: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
     }
 .form-box{
     backdrop-filter: blur(10px);
-    background: #ffffff00;
+    background: #f9000000;
     width: 540px;
     margin: auto;
     padding: 32px;
     border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    border: 1px solid #1B5E20;
+    box-shadow: 0 6px 18px rgb(0, 0, 0);
+    border: 2px solid #17501b;
     }
 h1{
     color: #ffffff84;
@@ -36,7 +38,7 @@ input, textarea{
     height: 46px;
     padding: 10px 14px;
     border-radius: 12px;
-    border: 1px solid #999;
+    border: 2px solid #134613;
     font-size: 15px;
     margin-bottom: 14px;
     box-sizing: border-box;

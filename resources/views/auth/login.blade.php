@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login PlastyPetco</title>
+    <title>PlastyPetco - Login</title>
+    <link rel="icon" href="{{ asset('images/plas.jpg') }}">
     <style>
         * {
             margin: 0;
@@ -11,7 +12,9 @@
             box-sizing: border-box;
         }
         body {
-            background:  url("{{ asset('images/fondo.jpg') }}") no-repeat center center fixed;
+            background:  url('images/fon2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,12 +22,13 @@
             font-family: 'Arial', sans-serif;
         }
         .login-box {
-            background: rgba(255, 255, 255, 0.66);
+            backdrop-filter: blur(8px);
             padding: 40px;
             width: 350px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 15px rgb(0, 0, 0);
             text-align: center;
+            border: 2px solid rgb(6, 133, 3);
         }
         .logo-emoji {
             font-size: 70px;
@@ -34,8 +38,8 @@
             font-size: 28px;
             font-weight: bold;
         }
-        .plastypet-title .green { color: #0db10d; }
-        .plastypet-title .blue { color: #007bff; }
+        .plastypet-title .green { color: #3db83f; }
+        .plastypet-title .blue { color: #2f92fb; }
         .login-box input {
             width: 100%;
             padding: 12px;
@@ -43,12 +47,13 @@
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 15px;
+            background: rgb(255, 255, 255);
         }
         .login-box button {
             width: 100%;
             padding: 12px;
             border: none;
-            background: #007bff;
+            background: #2f92fb;
             color: white;
             font-size: 16px;
             border-radius: 8px;
@@ -56,7 +61,7 @@
             margin-top: 10px;
         }
         .login-box button:hover {
-            background: #0056b3;
+            background: #2b86e7;
         }
         .error {
             color: red;
@@ -64,6 +69,7 @@
             font-weight: bold;
         }
         h1 {
+            color: #ffffff;
             margin-bottom: 20px;
             font-size: 24px;
         }
@@ -71,7 +77,7 @@
 </head>
 <body>
     <div class="login-box">
-        <div class="logo-emoji">♻️</div>
+        <div class="logo-emoji"><img src="{{ asset('images/plas.jpg') }}" alt="Logo" style="height:100px;"></div>
         <h2 class="plastypet-title">
             <span class="green">Plasty</span><span class="blue">Petco</span>
         </h2>
