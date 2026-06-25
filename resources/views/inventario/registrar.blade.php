@@ -227,13 +227,7 @@
             <label>Peso (Kg)</label>
             <input type="number" step="0.01" name="peso" value="{{ old('peso') }}" required>
         </div>
-
-        <!-- Remisión -->
-        <div class="form-group">
-            <label>Remisión</label>
-            <input name="remision" value="{{ old('remision') }}" required>
-        </div>
-
+<<<<<<
         <!-- Código de Paca (preview) -->
         <div class="form-group">
             <label>Código De Paca (Automático)</label>

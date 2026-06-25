@@ -5,14 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Despachos | PlastyPetco</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
+        body {
+            background: url("../images/fon2.png") center/cover fixed no-repeat;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
         .container-lista {
-            max-width: 1400px;
-            margin: 30px auto;
-            background: rgba(255,255,255,0.95);
-            border-radius: 28px;
-            padding: 30px;
+            width: 90%;
+            background: rgba(0, 0, 0, 0);
+            border-radius: 40px;
+            box-shadow: #000000 0px 0px 20px 0px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(2, 86, 10, 0.92);
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #1B5E20;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 12px;
+        }
+        p{
+            text-align: center;
+            color: #1B5E20;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 12px;
+            width: 12%;
+            margin: 20px auto; 
         }
         table {
             width: 100%;
@@ -73,7 +99,6 @@
 <body>
 <div class="container-lista">
     <h2>🚚 Listado de Despachos</h2>
-    <p>Total de registros: {{ $despachos->count() }}</p>
 
     <div class="filtro">
         <input type="text" id="buscar" placeholder="🔍 Buscar por cliente, lote, remisión..." onkeyup="filtrarTabla()">
@@ -127,6 +152,7 @@
     </div>
 
     <div>
+        <p>Total de registros: {{ $despachos->count() }}</p>
         @if(auth()->user()->rol == 'admin')
             <a href="{{ route('admin.dashboard') }}" class="btn-volver">← Volver al Dashboard</a>
         @elseif(auth()->user()->rol == 'inventario')

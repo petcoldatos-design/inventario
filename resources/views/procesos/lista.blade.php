@@ -3,17 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material en Proceso | PlastyPetco</title>
+    <title>PlastyPetco - Material en Proceso</title>
     <link rel="icon" href="{{ asset('images/plas.jpg') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
+          body {
+            background: url("../images/fon2.png") center/cover fixed no-repeat;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
         .container-lista {
-            max-width: 1400px;
+            width: 80%;
             margin: 30px auto;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0);
             border-radius: 28px;
             padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(2, 86, 10, 0.92);
         }
+        h2 {
+            text-align: center;
+            color: #1B5E20;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.61);
+            padding: 10px;
+            border-radius: 12px;
+            width: 100%;
+        }
+        p{ 
+            text-align: center;
+            color: #1B5E20;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 12px;
+            width: 12%;
+            margin: 20px auto; 
+         }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -72,11 +99,11 @@
 </head>
 <body>
 <div class="container-lista">
-    <h2>⚙️ Material en Proceso</h2>
-    <p>Total de registros: {{ $procesos->count() }}</p>
+    <h2>Material en Proceso</h2>
+    
 
     <div class="filtro">
-        <input type="text" id="buscar" placeholder="🔍 Buscar por proveedor, código, lote..." onkeyup="filtrarTabla()">
+        <input type="text" id="buscar" placeholder="🔍 Buscar" onkeyup="filtrarTabla()">
     </div>
 
     <div style="overflow-x: auto;">
@@ -125,6 +152,7 @@
     </div>
 
     <div>
+        <p>Total de registros: {{ $procesos->count() }}</p>
         <a href="{{ route('admin.dashboard') }}" class="btn-volver">← Volver al Dashboard</a>
         @if(auth()->user()->rol == 'procesos')
             <a href="{{ route('procesos.dashboard') }}" class="btn-volver">← Panel Procesos</a>

@@ -32,7 +32,18 @@
         h2 {
             text-align: center;
             color: #1B5E20;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 12px;
+        }
+        p{
+            text-align: center;
+            color: #1B5E20;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 12px;
+            width: 12%;
+            margin: 20px auto; 
         }
         table {
             width: 100%;
@@ -97,7 +108,7 @@
 </head>
 <body>
 <div class="container" style="max-width: 1400px; margin: 30px auto; border-radius: 28px; padding: 30px;">
-    <h2>📦 Listado de Inventario</h2>
+    <h2>Listado de Inventario</h2>
 
 
     <div class="filtro">
