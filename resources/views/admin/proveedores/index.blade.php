@@ -25,7 +25,7 @@
             @endif
 
             <table class="table table-bordered table-striped">
-                <thead class="table-dark">
+                <thead class="table-dark"
                     <tr>
                         <th>Código</th>
                         <th>Nombre</th>

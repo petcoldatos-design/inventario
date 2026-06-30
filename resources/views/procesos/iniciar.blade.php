@@ -77,11 +77,11 @@
                     <input type="hidden" name="codigo" value="{{ $codigo }}">
 
                     <div class="form-group">
-                        <label>🔌 Línea (Puerto)</label>
+                        <label> Línea </label>
                         <select name="puerto" required>
                             <option value="">-- Seleccione --</option>
-                            <option value="1">Puerto 1 (Línea 1)</option>
-                            <option value="2">Puerto 2 (Línea 2)</option>
+                            <option value="1">Línea 1</option>
+                            <option value="2">Línea 2</option>
                         </select>
                     </div>
 
@@ -89,6 +89,11 @@
                         <label>⚖️ Cantidad a procesar (kg)</label>
                         <input type="number" step="0.01" name="cantidad" value="{{ $resultado['peso'] }}" required>
                         <small>Máximo disponible: {{ number_format($resultado['peso'], 2) }} kg</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Operador</label>
+                        <input type="text" name="operador" value="{{ auth()->user()->name }}" readonly>
                     </div>
 
                     <button type="submit" class="btn btn-success">🚀 Iniciar proceso</button>
